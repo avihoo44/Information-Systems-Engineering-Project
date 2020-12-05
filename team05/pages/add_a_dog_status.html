@@ -1,0 +1,31 @@
+<!--/* ----------------------------------------------------------*/
+	/* add_a_dog_status.html                                     */
+	/* ----------------------------------------------------------*/
+	/* Author       - Tal Eylon, Amihai Kalev, Avihoo Menahem    */
+	/* Last updated - 2019-01-13                                 */
+	/* ----------------------------------------------------------*/ -->
+<!DOCTYPE html>
+<html>
+	<head>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/add_a_dog_status.css">
+	</head>
+	<body id="bodydw">
+		<div id="main_page">
+			{% if data == 1 %}
+			<h1>Dog successfully added!</h1>
+			{% endif %}
+			
+			{% if data == 2 %}
+			<h1>Oops... an error occured. Please try again.</h1>
+			{% endif %}
+				<table>
+					<tr>
+						<td>
+							<a  href="/owner/profile" class="choose">Go back to your profile</a>
+						</td>
+					</tr>
+				</table>
+		</div>		
+	</body>
+</html>
+		

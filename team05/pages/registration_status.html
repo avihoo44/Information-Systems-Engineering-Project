@@ -1,0 +1,32 @@
+<!--/* ----------------------------------------------------------*/
+	/* registration_status.html                                  */
+	/* ----------------------------------------------------------*/
+	/* Author       - Tal Eylon, Amihai Kalev, Avihoo Menahem    */
+	/* Last updated - 2019-01-13                                 */
+	/* ----------------------------------------------------------*/ -->
+<!DOCTYPE html>
+<html>
+	<head>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/registration_status.css">
+	</head>
+	<body id="bodydw">
+		<div id="main_page">
+	{% if data == 1 %}
+	<h1>Registration Success!</h1>
+	<h2>
+			<a href="/owner/profile">Go to your profile</a> 
+	</h2>
+	{% endif %}
+	
+	{% if data == 2 %}
+	<h1>Registration FAILED</h1>
+	<p>Probably one of the information you have provided is either missing or incorrect.
+	<br>Please try again!</p>
+	<h2>
+			<a href="/login">Click here to try again</a> 
+	</h2>
+	{% endif %}
+
+	</body>
+</html>
+		

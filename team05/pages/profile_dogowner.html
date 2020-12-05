@@ -1,0 +1,66 @@
+<!--/* ----------------------------------------------------------*/
+	/* profile_dogowner.html                                     */
+	/* ----------------------------------------------------------*/
+	/* Author       - Tal Eylon, Amihai Kalev, Avihoo Menahem    */
+	/* Last updated - 2019-01-13                                 */
+	/* ----------------------------------------------------------*/ -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/profile_dogowner.css">
+		<title>Dog Owner profile</title>
+	</head>
+	<body id="bodydw">
+	<div id="main_page">
+		<table class="menu_owner">
+		<tr>
+			<td>
+				<a href="/owner/profile">MY PROFILE</a>
+			</td>
+			<td>
+				<a href="/owner/profile/add">ADD A DOG</a>
+			</td>
+			<td>
+				<a href="/owner/profile/filter">CHOOSE A DOGWALKER</a>
+			</td>
+			<td>
+				<a href="/owner/profile/assignedwalkers">ASSIGNED DOGWALKERS</a>
+			</td>
+			<td>
+				<a href="/logout" class="menu">LOGOUT</a>
+			</td>
+		</tr>
+		</table>
+		<hr>
+			<h1> WELCOME {{dog_owner_name}}!</h1>
+			<h3>You have <span >{{total_number_of_dogs or '0'}}</span> registered dogs in our system.</h3>
+				<p>You are registered as a {{dog_owner_type}} user.</p>
+				<br>
+				{% if num_of_dogs != 0 %}
+					<p>You have the following registered dogs:</p>
+						<table class="table_boxing">
+							<tr>
+								<th class="th-boxing">Dog Name</th>
+								<th class="th-boxing">Dog Gender</th>
+								<th class="th-boxing">Dog Age</th>
+								<th class="th-boxing">Dog Species</th>
+							</tr>
+							{% for each_dog in dogs %}
+							<tr>
+								<td class="td-boxing">{{each_dog[0]}}</td>
+								<td class="td-boxing">{{each_dog[1]}}</td>
+								<td class="td-boxing">{{each_dog[2]}}</td>
+								<td class="td-boxing">{{each_dog[3]}}</td>
+							</tr>
+							{% endfor %}
+							</table>
+					{% else %}
+						</table>
+						<p>Add your dogs today!</p>
+					{% endif %}
+					<p></p>
+		</div>
+		</div>		
+	</body>
+</html>
+

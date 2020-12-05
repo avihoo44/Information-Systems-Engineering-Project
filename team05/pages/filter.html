@@ -1,0 +1,117 @@
+<!--/* ----------------------------------------------------------*/
+	/* filter.html                                               */
+	/* ----------------------------------------------------------*/
+	/* Author       - Tal Eylon, Amihai Kalev, Avihoo Menahem    */
+	/* Last updated - 2019-01-13                                 */
+	/* ----------------------------------------------------------*/ -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/filter.css">
+		<title>Register a dog!</title>
+	</head>
+	<body id="bodydw">
+	<div id="main_page">
+		<table class="menu_owner">
+		<tr>
+			<td>
+				<a href="/owner/profile">MY PROFILE</a>
+			</td>
+			<td>
+				<a href="/owner/profile/add">ADD A DOG</a>
+			</td>
+			<td>
+				<a href="/owner/profile/filter">CHOOSE A DOGWALKER</a>
+			</td>
+			<td>
+				<a href="/owner/profile/assignedwalkers">ASSIGNED DOGWALKERS</a>
+			</td>
+			<td>
+				<a href="/logout" class="menu">LOGOUT</a>
+			</td>
+		</tr>
+		</table>
+		<hr>
+			<h1 > Dog Registration</h1>
+			{% if dogs_unregistered != () %}	
+				<p id="in_text">The following dogs are unregistered to a dog walker.
+				<br>Please choose the dog you wish to find a dog walker for:</p>
+				
+					<div>
+					<form action="/owner/profile/filter" method="post">
+					<fieldset >
+					<table class="table-margin">
+						<tr>
+							<th>Dog Name</th>
+							<th>Choose</th>
+						</tr>
+						{% for each_row in dogs_unregistered %}
+							<tr>
+								<td class="td-center">{{each_row[0]}}</td>
+								<td class="td-center"><input type="radio" name="dog_id_and_type" value="{{each_row[1]}},{{each_row[2]}}" required></td>
+							</tr>
+						{% endfor %}
+					</table>
+					</fieldset>
+					
+					<fieldset >
+					<table class="table-margin">
+						 <tr>
+							<th colspan="2">
+								<span>Please choose the way you wish to filter the dog walkers:</span><br>
+							</th>
+						</tr>
+						<tr><td colspan="2">&nbsp;</td></tr>
+						<tr>
+							<td>
+								<input type="radio" name="chosen_filter" value="city" required> By City 
+							</td>
+							<td>
+								<select name="city">
+								{% for each_city in cities %}
+									<option value="{{each_city[0]}}">{{each_city[0]}}</option>
+								{% endfor %}
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="radio" name="chosen_filter" value="day" required> By Day 
+							</td>
+							<td>
+								<select name="day">  
+								  <option value="1">Sunday
+								  <option value="2">Monday
+								  <option value="3">Tuesday
+								  <option value="4">Wednesday
+								  <option value="5">Thursday
+								  <option value="6">Friday
+								  <option value="7">Saturday
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="radio" name="chosen_filter" value="maxprice" required> By Max Price
+							</td>
+							<td>
+								<input type="number" min="1" name="max_price">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="td-center">
+								<input type="submit" value="Search" class="important_button">
+							</td>
+						</tr>
+						</fieldset>
+					</table>
+					{% else %}
+						<p>Your dogs are all registered to dog walkers!</p><br>
+					{% endif %}
+					</div>
+		</div>		
+	</body>
+</html>
+
+						
+						

@@ -1,0 +1,117 @@
+/* ----------------------------------------------------------*/
+/* registration_status.css                                   */
+/* ------------                                              */
+/* css file for registration_status.html                     */
+/* ----------------------------------------------------------*/
+/* Author       - Tal Eylon, Amihai Kaleb, Avihoo Menahem    */
+/* Last updated - 2019-01-13                                 */
+/* ----------------------------------------------------------*/
+
+/* style for scroll bar for the html page */
+body{
+	overflow: scroll;
+}
+/* main style for each page, with white background and a solid grey border  */
+#main_page{
+	margin: 0 auto;
+	width: 900px;
+	border-color: #17202A;
+	border-style: solid;
+	border-width: 4px;
+	box-shadow: 10px 10px 5px grey;
+	background-color:white;
+	opacity: 0.8;
+
+}
+#bodydw{
+	background-image: url("dogs2.jpg");
+	background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+	background-attachment: fixed;
+	background-blend-mode: lighten;
+	-ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+}
+/* style for the tables of ours form, wich defines the text font,size and color light-blue/grey */
+table {
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
+	color: #5D6D7E;
+	margin: 0 auto;
+}
+.td-center {
+	text-align: center;
+}
+
+/* style for h1-title with gray-blue color wich center to middle of the form */
+h1{
+	color: #5D6D7E;
+	letter-spacing: 3px;
+	text-shadow: 1px 1px 2px black, 0 0 25px #566573, 0 0 5px #566573;
+	border-bottom-style: dotted;
+	text-align: center;
+	margin-left: 5%;
+	margin-right : 5%;
+	font-size: 50px;
+
+}
+/* style for h2-title with gray-blue color wich center to middle of the form */
+h2{
+	color: #5D6D7E;
+	letter-spacing: 1px;
+	text-shadow: 1px 1px 2px black, 0 0 25px #566573, 0 0 5px #566573;
+	border-bottom-style: dotted;
+	text-align: center;
+	margin-left: 15%;
+	margin-right: 15%;
+
+}
+/* style for h3-title with gray-blue color wich center to middle of the form */
+h3{
+	color: #5D6D7E;
+	letter-spacing: 1px;
+	text-shadow: 1px 1px 2px black, 0 0 25px #566573, 0 0 5px #566573;
+	text-align: center;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+/* style for submit button, when hover on change color to black with white text. */
+.important_button:hover { /* change */
+	color: white;
+	background-color: black
+}
+/* style for submit button, defines font and size of the text of the button. */
+.important_button { /* change */
+	width: 120px;
+	height: 40px;
+	font-size: 14px;
+}
+/* style for our links of ours form, wich defines the links position,style and color */
+a.choose {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+	text-align: center;
+	padding-top: 3%;
+	padding-bottom: 2%;
+    color: initial;
+	width: 400px;
+	height: 27px;
+	position: center;
+}
+/* style for the paragraphs of ours form, wich defines the text font,size and color light-blue/grey */
+p{
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
+	font-size: 20px;
+	color: #5D6D7E;
+}
+/* other style definitions */
+
+span{
+	text-decoration: underline
+}

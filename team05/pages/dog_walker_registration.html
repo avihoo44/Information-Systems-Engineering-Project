@@ -1,0 +1,137 @@
+<!--/* ----------------------------------------------------------*/
+	/* dog_walker_registration.html                              */
+	/* ----------------------------------------------------------*/
+	/* Author       - Tal Eylon, Amihai Kalev, Avihoo Menahem    */
+	/* Last updated - 2019-01-13                                 */
+	/* ----------------------------------------------------------*/ -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/dog_walker_registration.css">
+		<title>Dog Walker registration</title>
+	</head>
+	<body id="bodydw">
+		<div id="main_page">
+			<h1> Registration For Dog Walker </h1>
+		
+		<form action="/registerdogwalker" method="post">
+            <table class="table-margin">
+                 <tr>
+						<th colspan="2" class="important_title">
+							<span class="undertext">Please Fill Out Your Details:</span><br>
+						</th>
+                </tr>
+				<tr><td colspan="2">&nbsp;</td></tr>
+                <tr>
+                    <td>
+						Email
+					</td>
+                    <td>
+						Your Google account email.
+					</td>
+                </tr>
+
+                <tr>
+                    <td class="bold_item">
+						Name
+					</td>
+                    <td>
+						<input type="text" name="name" class="wider" required>
+					</td>
+                </tr>
+
+				<tr>
+                    <td class="bold_item">
+						Phone Number
+					</td>
+                    <td>
+						<input type="number" name="phone" min="0" max="10000000000" class="wider" required>
+					</td>
+                </tr>
+				
+				<tr>
+                    <td class="bold_item">
+						City
+					</td>
+                    <td>
+					<select name="city" required>
+						<option value="Jerusalem">Jerusalem</option>
+						<option value="Tel Aviv">Tel Aviv</option>
+						<option value="Haifa">Haifa</option>
+						<option value="Rishon Lezion">Rishon Lezion</option>
+						<option value="Petah Tikva">Petah Tikva</option>
+						<option value="Ashdod">Ashdod</option>
+						<option value="Netanya">Netanya</option>
+						<option value="Beer Sheva">Beer Sheva</option>
+						<option value="Holon">Holon</option>
+						<option value="Sderot">Sderot</option>
+					</select>
+					</td>
+                </tr>
+				
+				<tr>
+                    <td class="bold_item">
+						Your Daily Price (in &#8362; per dog)
+					</td>
+                    <td>
+						<input type="number" name="day_price" min="0" max="1000" class="wider" required>
+					</td>
+                </tr>
+				
+				<tr>
+                    <td class="bold_item">
+						Max Dogs Per Day
+					</td>
+                    <td>
+						<input type="number" name="max_dogsperday" min="0" class="wider" required>
+					</td>
+                </tr>
+				
+				<tr><td>&nbsp;</td></tr>
+				
+				<tr>
+                    <td class="bold_item">
+						Choose your work days*:
+						
+					</td>
+							<td colspan="2">
+								<input type="checkbox" name="specific_working_days" value="1"> Sunday<br>
+								<input type="checkbox" name="specific_working_days" value="2"> Monday<br>
+								<input type="checkbox" name="specific_working_days" value="3"> Tuesday<br>
+								<input type="checkbox" name="specific_working_days" value="4"> Wednesday<br>
+								<input type="checkbox" name="specific_working_days" value="5"> Thursday<br>
+								<input type="checkbox" name="specific_working_days" value="6"> Friday<br>
+								<input type="checkbox" name="specific_working_days" value="7"> Saturday<br>
+							</td>
+                </tr>
+				<tr><td colspan="2"><span class="smaller">*Leave unchecked if you wish to work at the whole week.</span></td></tr>
+				<tr><td>&nbsp;</td></tr>
+				
+				<tr>
+                    <td class="bold_item">
+						Choose your favorite dog types to work with*
+					</td>
+							<td colspan="2">
+								<input type="checkbox" name="dog_types" value="1"> Labrador<br>
+								<input type="checkbox" name="dog_types" value="2"> Golden Retriever<br>
+								<input type="checkbox" name="dog_types" value="3"> Dalmatian<br>
+								<input type="checkbox" name="dog_types" value="4"> Pomeranian<br>
+								<input type="checkbox" name="dog_types" value="5"> Canaan<br>
+								<input type="checkbox" name="dog_types" value="6"> Bulldog<br>
+								<input type="checkbox" name="dog_types" value="7"> Chihuahua<br>
+								<input type="checkbox" name="dog_types" value="8"> Beagle<br>
+					</td>
+                </tr>
+				<tr><td colspan="2"><span class="smaller">*Leave unchecked if you wish to work with all species above.<span class="smaller"></td></tr>
+
+					<tr>
+						<td colspan="2" class="td-center";>
+							<input type="submit" value="Register!" class="important_button">  
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</body>
+</html>
+

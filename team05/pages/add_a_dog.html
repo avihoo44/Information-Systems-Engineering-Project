@@ -1,0 +1,101 @@
+<!--/* ----------------------------------------------------------*/
+	/* add_a_dog.html                                            */
+	/* ----------------------------------------------------------*/
+	/* Author       - Tal Eylon, Amihai Kalev, Avihoo Menahem    */
+	/* Last updated - 2019-01-13                                 */
+	/* ----------------------------------------------------------*/ -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/add_a_dog.css">
+		<title>Add a Dog!</title>
+	</head>
+	<body id="bodydw">
+	<div id="main_page">
+		<table class="menu_owner">
+		<tr>
+			<td>
+				<a href="/owner/profile">MY PROFILE</a>
+			</td>
+			<td>
+				<a href="/owner/profile/add">ADD A DOG</a>
+			</td>
+			<td>
+				<a href="/owner/profile/filter">CHOOSE A DOGWALKER</a>
+			</td>
+			<td>
+				<a href="/owner/profile/assignedwalkers">ASSIGNED DOGWALKERS</a>
+			</td>
+			<td>
+				<a href="/logout" class="menu">LOGOUT</a>
+			</td>
+		</tr>
+		</table>
+		<hr>
+		<h1> Add A Dog </h1>
+		<form action="/owner/profile/add" method="post">
+		
+            <table>
+				<tr>
+					<td colspan="2" class="td-center">
+						<span>Please Fill Out The Following Details:</span>
+
+					</td>
+				</tr>
+	
+				
+				<tr>
+                    <td>
+						Dog Name
+					</td>
+                    <td>
+						<input type="text" name="dog_name"  required>
+					</td>
+                </tr>
+				
+				<tr>
+                    <td>
+						Dog Gender
+					</td>
+                    <td>
+						<select name="dog_gender" required>
+							<option value="Male"> Male</option>
+							<option value="Female"> Female</option>
+						</select>
+					</td>
+                </tr>
+				
+				<tr>
+                    <td>
+						Dog Age
+					</td>
+                    <td>
+						<input type="number" min="1" name="dog_age"  required>
+					</td>
+                </tr>
+				
+				<tr>
+                    <td>
+						Dog Species
+					</td>
+                    <td>
+					<select name="type_id">
+						{% for each_species in species %}
+							<option value="{{each_species[0]}}" required> {{each_species[1]}} </option>
+						{% endfor %}
+					</select>
+					</td>
+                </tr>
+				
+
+                <tr>
+                    <td colspan="2" class="td-center">
+						<input type="submit" value="Add!" class="important_button">  
+					</td>
+                </tr>
+            </table>
+        </form>
+		</div>
+	</body>
+</html>
+

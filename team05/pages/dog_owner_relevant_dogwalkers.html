@@ -1,0 +1,72 @@
+<!--/* ----------------------------------------------------------*/
+	/* dog_owner_relevant_dogwalkers.html                        */
+	/* ----------------------------------------------------------*/
+	/* Author       - Tal Eylon, Amihai Kalev, Avihoo Menahem    */
+	/* Last updated - 2019-01-13                                 */
+	/* ----------------------------------------------------------*/ -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/dog_registration_with_walker.css">
+	</head>
+	<body id="bodydw">
+	<div id="main_page">
+		<table class="menu_owner">
+		<tr>
+			<td>
+				<a href="/owner/profile">MY PROFILE</a>
+			</td>
+			<td>
+				<a href="/owner/profile/add">ADD A DOG</a>
+			</td>
+			<td>
+				<a href="/owner/profile/filter">CHOOSE A DOGWALKER</a>
+			</td>
+			<td>
+				<a href="/owner/profile/assignedwalkers">ASSIGNED DOGWALKERS</a>
+			</td>
+			<td>
+				<a href="/logout" class="menu">LOGOUT</a>
+			</td>
+		</tr>
+		</table>
+		<hr>
+			<h1> Your Assigned Dog Walkers</h1>
+				<p>Dear user,</p>
+				{% if row_count != 0 %}
+					<p>Here are the dog walkers that are taking your dogs.<br>
+					You may call them using their phone numbers shown below in case they don't show up!</p>
+					
+					
+					
+						<table class="table_boxing" >
+							<tr>
+								<th class="th-boxing">Dog Name</th>
+								<th class="th-boxing">Assigned Dog Walker</th>
+								<th class="th-boxing">Phone Number</th>
+								<th class="th-boxing">Day of Trip</th>
+								<th class="th-boxing">Price (in &#8362;)</th>
+							</tr>
+						{% for each_row in dog_walkers %}
+							<tr>
+								<td class="td-boxing">{{each_row[0]}}</td>
+								<td class="td-boxing">{{each_row[1]}}</td>
+								<td class="td-boxing">{{each_row[2]}}</td>
+								<td class="td-boxing">{{days[each_row[3]-1]}}</td>
+								<td class="td-boxing">{{each_row[4]}}</td>
+								
+						{% endfor %}
+					</table>
+					<p></p>
+					<p>As a result, you have to pay {{total_cost}} &#8362; this week.</p>
+
+				{% else %}
+						<p>You don't have any assigned dog walkers yet.</p><br><br>
+				{% endif %}
+	<p>&nbsp;</p>
+	</div>
+	</body>
+</html>
+
+						
+						

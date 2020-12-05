@@ -1,0 +1,66 @@
+<!--/* ----------------------------------------------------------*/
+	/* profile_dogwalker_schedule.html                           */
+	/* ----------------------------------------------------------*/
+	/* Author       - Tal Eylon, Amihai Kalev, Avihoo Menahem    */
+	/* Last updated - 2019-01-13                                 */
+	/* ----------------------------------------------------------*/ -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/profile_dogwalker_schedule.css">
+	</head>
+	<body id="bodydw">
+		<!-- Main section -->
+		<div id="main_page">
+		<hr>
+			<table class="menu_owner">
+		<tr>
+			<td>
+				<a href="/walker/profile">MY PROFILE</a>
+			</td>
+			<td>
+				<a href="/walker/profile/schedule">WALK SCHEDULE</a>
+			</td>
+			<td>
+				<a href="/logout" class="menu">LOGOUT</a>
+			</td>
+		</tr>
+		</table>
+		<hr>
+			<h1 class="profile"> Walk Schedule</h1>
+			<h4 class="profile">You have <span class="marker">{{total_dogs_to_take or '0'}}</span> dogs to take this week in total.</h4>
+				<p>Total revenue of current week: <span class="marker">{{total_revenue or '0'}}</span> &#8362;</p>
+				<br><br>
+				According to our information, you can have a maximum of {{max_dogsperday}} walks per day.</p>
+				<div class="boxing">
+					<div id="dogs">
+					{% for i in range (1,8) %}
+						<div id="title">{{days[i-1]}}</div>
+						{% if day_count[i-1] > 0 %}
+							<table class="table_boxing">
+							<tr>
+								<th class="th-boxing">Dog Name</th>
+								<th class="th-boxing">City</th>
+								<th class="th-boxing">Dog Owner Name</th>
+								<th class="th-boxing">Phone Number</th>
+								<th class="th-boxing">Revenue (in &#8362;)</th>
+							</tr>
+							{% for each_dog in work_schedule[i] %}
+								<tr>
+									<td class="td-boxing">{{each_dog[0]}}</td>
+									<td class="td-boxing">{{each_dog[1]}}</td>
+									<td class="td-boxing">{{each_dog[2]}}</td>
+									<td class="td-boxing">{{each_dog[3]}}</td>
+									<td class="td-boxing">{{each_dog[4]}}</td>
+								</tr>
+							{% endfor %}
+							</table>
+						{% else %}
+							<p>It's a free day!</p>
+						{% endif %}
+					{% endfor %}
+			</div>
+		</div>		
+	</body>
+</html>
+

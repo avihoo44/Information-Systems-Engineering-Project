@@ -1,0 +1,154 @@
+/* ----------------------------------------------------------*/
+/* filter.css                                                */
+/* ------------                                              */
+/* css file for filter.html                                  */
+/* ----------------------------------------------------------*/
+/* Author       - Tal Eylon, Amihai Kaleb, Avihoo Menahem    */
+/* Last updated - 2019-01-13                                 */
+/* ----------------------------------------------------------*/
+
+/* style for scroll bar for the html page */
+body{
+	overflow: scroll;
+}
+fieldset {
+	border: 0;
+}
+/* main style for each page, with white background and a solid grey border  */
+#main_page{
+	margin: 0 auto;
+	width: 900px;
+	border-color: #17202A;
+	border-style: solid;
+	border-width: 4px;
+	box-shadow: 10px 10px 5px grey;
+	background-color: white;
+	opacity: 0.8;
+
+}
+#bodydw{
+	background-image: url("dogs2.jpg");
+	background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+	background-attachment: fixed;
+	background-blend-mode: lighten;
+	-ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+}
+
+/* style for h1-title with gray-blue color wich center to middle of the form */
+h1{
+	color: #5D6D7E;
+	letter-spacing: 3px;
+	text-shadow: 1px 1px 2px black, 0 0 25px #566573, 0 0 5px #566573;
+	border-bottom-style: dotted;
+	text-align: center;
+	margin-left: 5%;
+	margin-right : 5%;
+	font-size: 50px;
+
+}
+/* style for h2-title with gray-blue color wich center to middle of the form */
+h2{
+	color: #5D6D7E;
+	letter-spacing: 1px;
+	text-shadow: 1px 1px 2px black, 0 0 25px #566573, 0 0 5px #566573;
+	border-bottom-style: dotted;
+	text-align: center;
+	margin-left: 15%;
+	margin-right: 15%;
+
+}
+/* style for h3-title with gray-blue color wich center to middle of the form */
+h3{
+	color: #5D6D7E;
+	letter-spacing: 1px;
+	text-shadow: 1px 1px 2px black, 0 0 25px #566573, 0 0 5px #566573;
+	text-align: center;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+
+
+th {
+	text-align: center;
+	font-size: 125%;
+}
+.td-center {
+	text-align: center;
+}
+/* style for the paragraphs of ours form, wich defines the text font,size and color light-blue/grey */
+p{
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
+	font-size: 20px;
+	color: #5D6D7E;
+	margin: 0 auto;
+	padding: 5%;
+}
+/* style for the tables of ours form, wich defines the text font,size,position and color light-blue/grey */
+table {
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
+	font-size: 20px;
+	color: #5D6D7E;
+	
+}
+.table-margin{
+	margin: 0 auto;
+}
+/* style for submit button, when hover on change color to black with white text. */
+input.important_button:hover { /* change */
+	color: white;
+	background-color: black
+}
+/* style for submit button, defines font and size of the text of the button. */
+input.important_button { /* change */
+	width: 120px;
+	height: 40px;
+	font-size: 14px;
+	margin-right: 50px;
+	margin-left: 50px;
+}
+/* style for TOOLBAR MENU TABLE wich center the text to the middle of the column */
+table.menu_owner {
+	text-align: center;
+	font-family: Verdana;
+	font-size: 11px;
+}
+
+.menu_owner td {
+	border: 1px solid;
+	background-color: lightgray;
+	width: 250px;
+	height: 30px;
+}
+
+.menu_owner a:link {
+  text-decoration: none;
+  color: black;
+}
+
+.menu_owner td:hover {
+	background-color: #f5f5f5;
+}
+/* style for the divs of ours form, wich defines the border style */
+div.boxing{
+	border-style: solid;
+	padding: 20px;
+}
+/* other style definitions */
+.button-margin{
+	margin-left: 40%;
+	margin-left: 40%;
+}
+.smaller {
+	font-size: 14px;
+}
+span{
+	text-decoration: underline
+}

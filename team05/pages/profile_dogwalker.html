@@ -1,0 +1,79 @@
+<!--/* ----------------------------------------------------------*/
+	/* profile_dogwalker.html                                    */
+	/* ----------------------------------------------------------*/
+	/* Author       - Tal Eylon, Amihai Kalev, Avihoo Menahem    */
+	/* Last updated - 2019-01-13                                 */
+	/* ----------------------------------------------------------*/ -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/profile_dogwalker.css">
+	</head>
+	<body id="bodydw">
+		<!-- Main section -->
+		<div id="main_page">
+		<hr>
+			<table class="menu_walker">
+		<tr>
+			<td>
+				<a href="/walker/profile">MY PROFILE</a>
+			</td>
+			<td>
+				<a href="/walker/profile/schedule">WALK SCHEDULE</a>
+			</td>
+			<td>
+				<a href="/logout" class="menu">LOGOUT</a>
+			</td>
+		</tr>
+		</table>
+		<hr>
+			<h1 class="profile"> WELCOME {{dog_walker_name}}!</h1>
+				<p>Total revenue of current week: <span class="marker">{{total_week_revenue or '0'}}</span> &#8362;</p>
+				<br><br>
+				<hr>
+				<p>According to our information, you are willing to take the following dog species:</p>
+				
+				<table class="table-boxing">
+				{% for each_species in takes_only %}
+					<th class="th-boxing">{{each_species[0]}}</th>
+				{% endfor %}
+				</table>
+				
+				<p>And you are willing to take these species in the following days:</p>
+				
+				<table class="table-boxing">
+				{% for each_day in specific_working_days %}
+					<th class="th-boxing">{{days[each_day[0]-1]}}</th>
+				{% endfor %}
+				</table>
+				<hr>
+				
+				<p></p>
+				{% if customers_num != 0 %}
+					<p>You have the following customers:</p>
+						<div id="boxing">
+						<table class="table_boxing" >
+							<tr>
+								<th class="th-boxing">Name</th>
+								<th class="th-boxing">Email</th>
+								<th class="th-boxing">Phone Number</th>
+								<th class="th-boxing">City</th>
+							</tr>
+							{% for each_row in customers %}
+							<tr>
+								<td class="td-boxing">{{each_row[0]}}</td>
+								<td class="td-boxing">{{each_row[1]}}</td>
+								<td class="td-boxing">{{each_row[2]}}</td>
+								<td class="td-boxing">{{each_row[3]}}</td>
+							</tr>
+							{% endfor %}
+						</table>
+						<p></p>
+					{% else %}
+						<p>No customers right now!</p>
+					{% endif %}
+					</div>
+		</div>		
+	</body>
+</html>
+

@@ -1,0 +1,49 @@
+# -----------------------------------------------------------------------------
+# DogWalker project - Created by:
+# Tal Eylon, Avihoo Menahem, Amihai Kalev
+# The project can be viewed in the following URL:
+# http://team-05-dogwalkerservice.appspot.com/
+# -----------------------------------------------------------------------------
+application: team-05-dogwalkerservice
+
+# ------------------------------------------------
+# the current version of the application we create
+# ------------------------------------------------
+version: 1
+
+# -----------------------------------------
+# the chosen programming language
+# -----------------------------------------
+runtime: python27
+
+# -----------------------------------------
+# python sub version
+# -----------------------------------------
+api_version: 1
+
+# ---------------------------------------------------------------------
+# threadsafe - to prevent collision between calls to the application
+#              from different clients
+# ---------------------------------------------------------------------
+threadsafe: yes
+
+# ---------------------------------------------------------------------
+# handlers
+# ---------------------------------------------------------------------
+# first handler: Apply the "stylesheets" directory as static, so its files will be deployed, along with the images inside the folder.
+# second handler: the main application
+# third handler: set jinja environment, and select the latest version.
+# fourth handler: set MySQL database connection package, and select the latest version.
+handlers:
+- url: /stylesheets
+  static_dir: stylesheets
+
+- url: /.*
+  script: main.app
+
+libraries:
+- name: jinja2
+  version: latest
+
+- name: MySQLdb
+  version: latest
